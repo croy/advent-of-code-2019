@@ -13,3 +13,6 @@ Yay, we're getting into machine simulation on day 2. As stated in past years, I 
 
 ### Day 3
 My first pass at a solution to this problem part 1 was ugly, but worked. I just copy-pasted a bunch of loops around for path traversal. After solving part 2 I abstracted some of it out into a generator that can yield points, and then cleaned up the solutions quite a bit. I probably should have just had the generator include travel distance in the returned object, which would have saved me from one bug I did run into in part 2 (not reseting the total travel distance between the wires). Perfect is the enemy of done though, so it's good enough for today :).
+
+### Day 4
+Another inefficient solution, another day. Not wild about double iterating the digits but I prioritized readability in my cleanup pass (my first version of this was _much_ uglier). Also it's still really really fast given the constraints of the problem so yet again :shrug:.

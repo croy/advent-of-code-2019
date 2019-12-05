@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/lodash": "^4.14.149",
     "@types/node": "^12.12.14",
+    "lodash": "^4.17.15",
     "prettier": "^1.19.1",
-    "typescript": "^3.7.2"
+    "typescript": "^3.8.0-dev.20191204"
   }
 }
