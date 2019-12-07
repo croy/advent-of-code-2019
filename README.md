@@ -19,3 +19,12 @@ Another inefficient solution, another day. Not wild about double iterating the d
 
 ### Day 5
 I made so many mistakes on this implementation. The entire way through part 1 I was expecting for the instruction pointer ops to be a later problem and this one's part 2 to be some weird thing, but surprise it was now!
+
+### Day 6
+I thought it might be interesting to record some thoughts before I start the problem, then the thoughts after! Looking at part1, this is basically "build a tree and add up the depth of all the nodes" which should be straightforward I think. It's kind of them to explicitly call out the root node of the tree to make the traversal easier.
+
+After part 1: Yep basically what I expected.
+
+Before part 2: I think I can add parent links, traverse starting from SAN's orbit-center annotating each node with depth, then traverse starting from YOU orbit-center and when I first hit a node that's already marked combine the traversal lengths. 
+
+After part 2: Yep. I thought about using Djikstra's but I didn't want to implement a min-priority queue and I would have felt bad using a full sort every time (though I suspect later on there will be a problem where I do that and feel bad about it)
