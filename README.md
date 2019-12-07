@@ -16,3 +16,6 @@ My first pass at a solution to this problem part 1 was ugly, but worked. I just 
 
 ### Day 4
 Another inefficient solution, another day. Not wild about double iterating the digits but I prioritized readability in my cleanup pass (my first version of this was _much_ uglier). Also it's still really really fast given the constraints of the problem so yet again :shrug:.
+
+### Day 5
+I made so many mistakes on this implementation. The entire way through part 1 I was expecting for the instruction pointer ops to be a later problem and this one's part 2 to be some weird thing, but surprise it was now!
