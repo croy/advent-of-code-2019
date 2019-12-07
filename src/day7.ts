@@ -7,7 +7,7 @@ class IntCode {
     this.program = program;
   }
 
-  execute(inputs: number[]): number {
+  *execute(inputs: number[]) {
     const memory = [... this.program];
 
     function getDirect(address: number) {
@@ -42,11 +42,16 @@ class IntCode {
           instructionPointer += 4;
           break;
         case 3:
-          setIntermediate(instructionPointer + 1, inputs.shift() ?? 0);
+          while (inputs.length === 0) {
+            yield;
+          }
+          setIntermediate(instructionPointer + 1, inputs.shift() as number);
           instructionPointer += 2;
           break;
         case 4:
-          return arg1;
+          yield arg1;
+          instructionPointer += 2;
+          break;
         case 5:
           if (arg1 !== 0) {
             instructionPointer = arg2;
@@ -70,12 +75,12 @@ class IntCode {
           instructionPointer += 4;
           break;
         case 99:
-          throw 'should have output a value!'
+          return;
         default:
           throw `UNKNOWN OPERATION ${instruction}`;
       }
     }
-    throw 'should have output a value!'
+    throw 'y no halt';
   }
 }
 
@@ -86,18 +91,54 @@ function permutations(options: number[]): number[][] {
   return options.flatMap(opt => permutations(options.filter(x => x !== opt)).map(perms => [opt, ...perms]));
 }
 
-const possiblePhaseOrders = permutations([0, 1, 2, 3, 4]);
+const possiblePhaseOrders = permutations([5, 6, 7, 8, 9]);
+
 const program = fs.readFileSync('input/day7', 'utf-8');
 const compy = new IntCode(program.split(',').map(i => parseInt(i, 10)));
 let max = -Infinity;
 for (const phaseOrder of possiblePhaseOrders) {
-  const phase1 = compy.execute([phaseOrder[0], 0]);
-  const phase2 = compy.execute([phaseOrder[1], phase1]);
-  const phase3 = compy.execute([phaseOrder[2], phase2]);
-  const phase4 = compy.execute([phaseOrder[3], phase3]);
-  const phase5 = compy.execute([phaseOrder[4], phase4]);
-  if (phase5 > max) {
-    max = phase5;
+  const inputA = [phaseOrder[0], 0];
+  const inputB = [phaseOrder[1]]
+  const inputC = [phaseOrder[2]]
+  const inputD = [phaseOrder[3]]
+  const inputE = [phaseOrder[4]]
+  const outputA = compy.execute(inputA);
+  const outputB = compy.execute(inputB);
+  const outputC = compy.execute(inputC);
+  const outputD = compy.execute(inputD);
+  const outputE = compy.execute(inputE);
+  let finished = false;
+  while (!finished) {
+    let lastYield = outputA.next();
+    while (!lastYield.done && lastYield.value !== undefined) {
+      inputB.push(lastYield.value);
+      lastYield = outputA.next();
+    }
+    lastYield = outputB.next();
+    while (!lastYield.done && lastYield.value !== undefined) {
+      inputC.push(lastYield.value);
+      lastYield = outputB.next();
+    }
+    lastYield = outputC.next();
+    while (!lastYield.done && lastYield.value !== undefined) {
+      inputD.push(lastYield.value);
+      lastYield = outputC.next();
+    }
+    lastYield = outputD.next();
+    while (!lastYield.done && lastYield.value !== undefined) {
+      inputE.push(lastYield.value);
+      lastYield = outputD.next();
+    }
+    lastYield = outputE.next();
+    while (!lastYield.done && lastYield.value !== undefined) {
+      if (lastYield.value > max) {
+        max = lastYield.value;
+      }
+      inputA.push(lastYield.value);
+      lastYield = outputE.next();
+    }
+    finished = lastYield.done as boolean;
   }
 }
+
 console.log(max);

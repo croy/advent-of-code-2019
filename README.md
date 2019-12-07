@@ -28,3 +28,12 @@ After part 1: Yep basically what I expected.
 Before part 2: I think I can add parent links, traverse starting from SAN's orbit-center annotating each node with depth, then traverse starting from YOU orbit-center and when I first hit a node that's already marked combine the traversal lengths. 
 
 After part 2: Yep. I thought about using Djikstra's but I didn't want to implement a min-priority queue and I would have felt bad using a full sort every time (though I suspect later on there will be a problem where I do that and feel bad about it)
+
+### Day 7
+The day when my sins start to catch up to haunt me. I knew I should have done a better job of isolating IntCode executions. Shouldn't be hard but it might be uglier than it otherwise could have been.
+
+After part 1: yep, that was fine. Made some hacks instead of actually building input/output, which will probably bite me later.
+
+before part 2: yep, bit me later :) Time to convert execution to generators and yield for input, output, and halt. whee. 
+
+After part 2: That conversion wasn't too bad. Not wild about the repeated code pattern at the end of the problem but also didn't want to really formalize input/output streams.
