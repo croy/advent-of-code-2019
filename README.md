@@ -37,3 +37,8 @@ After part 1: yep, that was fine. Made some hacks instead of actually building i
 before part 2: yep, bit me later :) Time to convert execution to generators and yield for input, output, and halt. whee. 
 
 After part 2: That conversion wasn't too bad. Not wild about the repeated code pattern at the end of the problem but also didn't want to really formalize input/output streams.
+
+### Day 8
+The problem description says this is going to represent a picture, which almost certainly means at some point we're going to combine the layers. I generally try not to think about assumptions like that and just focus on individual parts because I've been surprised by part 2 a lot. In any case,  for Part 1 I just intend to make a list of digits, chunk it by my image dimensions and perform the requested calculations.
+
+Yep, have to combine them. The combination isn't too bad though, and zip made it pretty straightforward. Originally I printed out the pixel values but I couldn't read the output so I switched to X and " " which was fine.
