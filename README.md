@@ -42,3 +42,6 @@ After part 2: That conversion wasn't too bad. Not wild about the repeated code p
 The problem description says this is going to represent a picture, which almost certainly means at some point we're going to combine the layers. I generally try not to think about assumptions like that and just focus on individual parts because I've been surprised by part 2 a lot. In any case,  for Part 1 I just intend to make a list of digits, chunk it by my image dimensions and perform the requested calculations.
 
 Yep, have to combine them. The combination isn't too bad though, and zip made it pretty straightforward. Originally I printed out the pixel values but I couldn't read the output so I switched to X and " " which was fine.
+
+### Day 9
+I forgot to jot down some thoughts before writing this one, but it was mostly just adding the new address mode. I ended up finally making a separate IntCode as part of this, because I figure this will be common enough to need it (though it seems like maybe this was the last one? I dunno).
