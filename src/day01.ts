@@ -5,7 +5,7 @@ function part1() {
     return Math.floor(moduleWeight / 3) - 2;
   }
 
-  const inFile = fs.readFileSync("input/day1", "utf-8");
+  const inFile = fs.readFileSync("input/day01", "utf-8");
   const result = inFile
     .split("\n")
     .map(n => parseInt(n))
@@ -24,7 +24,7 @@ function part2() {
     return fuelCost + calculateFuelCost(fuelCost);
   }
 
-  const inFile = fs.readFileSync("input/day1", "utf-8");
+  const inFile = fs.readFileSync("input/day01", "utf-8");
   const result = inFile
     .split("\n")
     .map(n => parseInt(n))

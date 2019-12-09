@@ -59,7 +59,7 @@ function parseInstruction(instruction: string): Instruction {
   };
 }
 
-const inputText = fs.readFileSync('input/day3', 'utf-8');
+const inputText = fs.readFileSync('input/day03', 'utf-8');
 const wire1Instructions = inputText.split('\n')[0].split(',').map(parseInstruction);
 const wire2Instructions = inputText.split('\n')[1].split(',').map(parseInstruction);
 

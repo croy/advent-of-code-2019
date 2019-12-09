@@ -1,7 +1,7 @@
 import fs from 'fs';
 import _ from 'lodash';
 
-const digits = fs.readFileSync('input/day8', 'utf-8').split('').map(i => parseInt(i, 10));
+const digits = fs.readFileSync('input/day08', 'utf-8').split('').map(i => parseInt(i, 10));
 const layers = _.chunk(digits, 25 * 6);
 let minZeros = Infinity;
 let currentVal = -1;

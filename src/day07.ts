@@ -93,7 +93,7 @@ function permutations(options: number[]): number[][] {
 
 const possiblePhaseOrders = permutations([5, 6, 7, 8, 9]);
 
-const program = fs.readFileSync('input/day7', 'utf-8');
+const program = fs.readFileSync('input/day07', 'utf-8');
 const compy = new IntCode(program.split(',').map(i => parseInt(i, 10)));
 let max = -Infinity;
 for (const phaseOrder of possiblePhaseOrders) {

@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const orbitPairs = fs.readFileSync('input/day6', 'utf-8').split('\n').map(l => l.split(')'));
+const orbitPairs = fs.readFileSync('input/day06', 'utf-8').split('\n').map(l => l.split(')'));
 
 type Node = {
   name: string,

@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const program = fs.readFileSync('input/day5', 'utf-8').split(',').map(i => parseInt(i, 10));
+const program = fs.readFileSync('input/day05', 'utf-8').split(',').map(i => parseInt(i, 10));
 let instructionPointer = 0;
 
 function getIntermediate(program: number[], address: number) {

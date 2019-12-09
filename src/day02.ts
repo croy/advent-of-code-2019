@@ -16,7 +16,7 @@ function part2() {
 }
 
 function simulateIntCode(input1?: number, input2?: number) {
-  const input = fs.readFileSync("input/day2", "utf-8");
+  const input = fs.readFileSync("input/day02", "utf-8");
   const memory = input.split(",").map(n => parseInt(n));
   if (input1) {
     memory[1] = input1;
