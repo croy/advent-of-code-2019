@@ -45,3 +45,12 @@ Yep, have to combine them. The combination isn't too bad though, and zip made it
 
 ### Day 9
 I forgot to jot down some thoughts before writing this one, but it was mostly just adding the new address mode. I ended up finally making a separate IntCode as part of this, because I figure this will be common enough to need it (though it seems like maybe this was the last one? I dunno).
+
+### Day 10
+Working on this a day late. Problem description seems reasonably straightforward, Can just iterate over all point pairs and store the angles there are asteroids along. Count of unique angles should be the set of visible asteroids.
+
+Yep that was right except I made an initial error of assuming I could just include the asteroid with itself and subtract 1 later. Unfortunately, that results in an atan2 of 0, which means when there is another asteroid on that line it gets unfairly occluded. I originally debated whether I should perform the optimization of only considering each pair once (instead of twice) by counting visibility in both directions, but decided to leave it as a later optimization. It would have saved me from this mistake though :(
+
+Part 2 is rotating a laser, which should just require doing the same type of iteration, putting them into a sort order by angle and then having a list of distances, taking one from each angle each turn.
+
+After: yep but I sure did mess up the angle calculations SO MUCH. Also inelegant solution :/
