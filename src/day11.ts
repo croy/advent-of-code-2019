@@ -46,13 +46,13 @@ let stepper = new IntCode(program).execute(inputStream);
 let currentX = 0;
 let currentY = 0;
 let currentDirection: DIRECTION = 'UP';
-const hull: number[][] = [];
+const hull: number[][] = [[1]];
 const paintedPlaces = new Set();
 while (true) {
-  if (!hull[currentX]) {
-    hull[currentX] = [];
+  if (!hull[currentY]) {
+    hull[currentY] = [];
   }
-  const currentColor = _.get(hull, [currentX, currentY], 0);
+  const currentColor = _.get(hull, [currentY, currentX], 0);
   //provide current color
   inputStream.push(currentColor);
 
@@ -64,7 +64,7 @@ while (true) {
   if (color.value === undefined) {
     throw 'received undefined color output';
   }
-  hull[currentX][currentY] = color.value;
+  hull[currentY][currentX] = color.value;
   paintedPlaces.add(`(${currentX},${currentY})`);
 
   //advance
@@ -80,4 +80,15 @@ while (true) {
   currentY += dy[currentDirection];
 }
 
-console.log(paintedPlaces.size);
+//console.log(paintedPlaces.size);
+for (let y = 0; y < hull.length; y++) {
+  const line: string[] = [];
+  for (let x = 0; x < hull[y].length; x++) {
+    if (hull[y][x] === 1) {
+      line.push('X');
+    } else {
+      line.push(' ');
+    }
+  }
+  console.log(line.join(''));
+}

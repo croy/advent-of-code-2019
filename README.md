@@ -59,3 +59,5 @@ After: yep but I sure did mess up the angle calculations SO MUCH. Also inelegant
 Getting started on this days behind, so probably not going to prioritize anything but getting it done. This is a neat problem setup to use the IntCode computer we created earlier as a blackbox that we have to keep passing input to and reading output from. 
 
 First part was relatively straightforward, next part I guess I'll need to display the output of the hull, hopefully it's also straightforward.
+
+Inverting the coordinate storage was sufficient to just print them out. Technically I should have normalized the grid in case negative numbers cropped up, but they didn't for my input (and according to the puzzle authors last year we are expected to take advantage of things like that?).
