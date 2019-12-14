@@ -54,3 +54,8 @@ Yep that was right except I made an initial error of assuming I could just inclu
 Part 2 is rotating a laser, which should just require doing the same type of iteration, putting them into a sort order by angle and then having a list of distances, taking one from each angle each turn.
 
 After: yep but I sure did mess up the angle calculations SO MUCH. Also inelegant solution :/
+
+### Day 11
+Getting started on this days behind, so probably not going to prioritize anything but getting it done. This is a neat problem setup to use the IntCode computer we created earlier as a blackbox that we have to keep passing input to and reading output from. 
+
+First part was relatively straightforward, next part I guess I'll need to display the output of the hull, hopefully it's also straightforward.

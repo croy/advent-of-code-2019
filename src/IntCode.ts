@@ -48,7 +48,6 @@ export default class IntCode {
           break;
         case Mode.immediate:
           throw 'NO';
-          break;
         case Mode.relative:
           memory[memory[address] + relativeBase] = value;
           break;
