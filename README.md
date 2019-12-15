@@ -61,3 +61,6 @@ Getting started on this days behind, so probably not going to prioritize anythin
 First part was relatively straightforward, next part I guess I'll need to display the output of the hull, hopefully it's also straightforward.
 
 Inverting the coordinate storage was sufficient to just print them out. Technically I should have normalized the grid in case negative numbers cropped up, but they didn't for my input (and according to the puzzle authors last year we are expected to take advantage of things like that?).
+
+### Day 12
+Part 1 is a straightforward simulation. Part 2, as guessed, is "figure out and exploit the pattern in the simulation". Normally I have a pretty good guess as to how to do these, but I'm blanking right now and behind so I'll come back to it.
