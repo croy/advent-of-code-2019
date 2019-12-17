@@ -89,3 +89,5 @@ Part 2 was straightforward, but I just clobbered over part 1 for it. thanks git 
 ### Day 14
 
 part 1: Straightforward brute forced it, though I feel like there is some more clever way to do the calculation
+
+part 2: I mostly brute forced this except for taking advantage of the fact that I knew we could produce at _least_ the trillion / fuel estimate from part 1. Ran relatively slowly but not unreasonably so.
