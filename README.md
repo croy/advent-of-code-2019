@@ -85,3 +85,7 @@ Part 1 is a straightforward simulation. Part 2, as guessed, is "figure out and e
 Part 1 seems straightforward, but I do wonder whether the output instructions can overlap squares. I'm going to assume not for now, since it's unclear what the resolution strategy would be there (probably the second draw takes precedence?).
 
 Part 2 was straightforward, but I just clobbered over part 1 for it. thanks git history.
+
+### Day 14
+
+part 1: Straightforward brute forced it, though I feel like there is some more clever way to do the calculation
