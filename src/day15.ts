@@ -50,5 +50,26 @@ function explore(pastMovements: number[], cameFrom?: Directions): number {
   return -1;
 }
 
+function longestPath(cameFrom?: Directions): number {
+  const fromHere = directionPairs.map(([direction, undo]) => {
+    if (cameFrom !== direction) {
+      input.push(direction);
+      const movementResult = stepper.next();
+      if (movementResult.done || movementResult.value === undefined) {
+        throw "something busted";
+      }
+      if (movementResult.value !== 0) {
+        const result = longestPath(undo) + 1;
+        input.push(undo);
+        stepper.next();
+        return result;
+      }
+    }
+    return 0;
+  });
+  return Math.max(1, ...fromHere);
+}
+
 console.log(explore([]));
 //at this point, we are at the oxygen tank.
+console.log(longestPath() - 1);
