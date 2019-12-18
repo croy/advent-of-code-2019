@@ -91,3 +91,9 @@ Part 2 was straightforward, but I just clobbered over part 1 for it. thanks git 
 part 1: Straightforward brute forced it, though I feel like there is some more clever way to do the calculation
 
 part 2: I mostly brute forced this except for taking advantage of the fact that I knew we could produce at _least_ the trillion / fuel estimate from part 1. Ran relatively slowly but not unreasonably so.
+
+### Day 15
+
+part 1: Made the assumption that there was only one path to each square, which worked well enough. This isn't guaranteed from the description but it was the case in the sample and was simpler.
+
+part 2: If it's true that each square only has one path, the length of time it should take is equal to the distance of the oxygen tank to the square furthest from it. I _think_ if what I do is start a new search as soon as I've found the tank, this time returning the length of the longest path, that may do it (though it is, of course, also possible the assumption isn't valid and I'll need to actually floodfill, which would be ok.)
