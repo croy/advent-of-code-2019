@@ -105,3 +105,9 @@ after part 2: hey cool it was fine.
 Part 1: just brute force
 
 Part 2: skipping for now, probably will have to be a bit more clever. Should be able to drastically reduce the length of the sequence (since places can't impact places after them due to the leading zeros), but that will still leave a lot. Probably a broader pattern to exploit, but I'm sufficiently far behind right now I just want to get a bunch of stars and see what's left after.
+
+### Day 17
+
+Part 1: pretty straightforward
+
+Part 2: skipping again for now. Seems like a fun problem though (determine possible routes, then see about compressing patterns down).
