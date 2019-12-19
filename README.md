@@ -99,3 +99,9 @@ part 1: Made the assumption that there was only one path to each square, which w
 part 2: If it's true that each square only has one path, the length of time it should take is equal to the distance of the oxygen tank to the square furthest from it. I _think_ if what I do is start a new search as soon as I've found the tank, this time returning the length of the longest path, that may do it (though it is, of course, also possible the assumption isn't valid and I'll need to actually floodfill, which would be ok.)
 
 after part 2: hey cool it was fine.
+
+### Day 16
+
+Part 1: just brute force
+
+Part 2: skipping for now, probably will have to be a bit more clever. Should be able to drastically reduce the length of the sequence (since places can't impact places after them due to the leading zeros), but that will still leave a lot. Probably a broader pattern to exploit, but I'm sufficiently far behind right now I just want to get a bunch of stars and see what's left after.
