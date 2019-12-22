@@ -80,6 +80,8 @@ Inverting the coordinate storage was sufficient to just print them out. Technica
 
 Part 1 is a straightforward simulation. Part 2, as guessed, is "figure out and exploit the pattern in the simulation". Normally I have a pretty good guess as to how to do these, but I'm blanking right now and behind so I'll come back to it.
 
+Part 2: Well, I spent a long time trying to figure out the pattern, and kept struggling. Eventually I looked at a hint that pointed out X/Y/Z were independent. This means that you can find the independent cycles and see how long they take to have a shared moment. Thought there might be a trick with them only settling into a stable orbit after a few ticks, but it appears they were already in a stable orbit so that was unnecessary. Calculated combined cycle length by hand because :shrug:
+
 ### Day 13
 
 Part 1 seems straightforward, but I do wonder whether the output instructions can overlap squares. I'm going to assume not for now, since it's unclear what the resolution strategy would be there (probably the second draw takes precedence?).
