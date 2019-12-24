@@ -24,3 +24,29 @@ console.log(
     .join("")
     .value()
 );
+
+// part 2
+// since our offset pushes us beyond the halfway point, we only have sums to deal with.
+
+const offset = parseInt(input.substr(0, 7));
+const totalLength = input.length * 10000;
+const relevantLength = totalLength - offset;
+const part2Input = _.takeRight(
+  input
+    .repeat(10000)
+    .split("")
+    .map(i => parseInt(i, 10)),
+  relevantLength
+);
+
+for (let repeat = 0; repeat < 100; repeat++) {
+  for (let index = part2Input.length - 2; index >= 0; index--) {
+    part2Input[index] = (part2Input[index] + part2Input[index + 1]) % 10;
+  }
+}
+console.log(
+  _.chain(part2Input)
+    .take(8)
+    .join("")
+    .value()
+);
