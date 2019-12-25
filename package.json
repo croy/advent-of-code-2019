@@ -13,6 +13,7 @@
     "@types/node": "^12.12.14",
     "lodash": "^4.17.15",
     "prettier": "^1.19.1",
+    "stdio": "^2.0.1",
     "typescript": "^3.8.0-dev.20191204"
   }
 }
